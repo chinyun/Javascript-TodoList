@@ -9,6 +9,7 @@ body {
 
 .title {
 	margin: 2px;
+	font-weight: 600;
 }
 
 .container {
@@ -70,19 +71,18 @@ button {
 }
 
 .list {
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 23px;
+    font-weight: 450;
     background-color: rgba(48,117,99,0.06);
     border-radius: 2px;
 	margin: 8px 30px 8px 0px ;
 	padding: 10px 0px 10px 20px;
-	color: rgba(97,118,222,1);
+	color: rgba(97,118,250,1);
 	height: 45px;
 }
 
 .list:hover {
 	background-color: rgba(0,0,0,0.1);
-	color: rgba(97,118,250,1);
 }
 
 .btn {
@@ -104,10 +104,28 @@ button {
 	opacity: 1;
 }
 
+.btn2 {
+	margin: 10px 20px 10px 30px;
+    padding: 0.3em 1em;
+    display: float;
+    float: right;
+	background-color: #4CAF50;
+	color:  #FFF;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.btn2:hover {
+	opacity: 1;
+}
+
 .done {
-	text-decoration: line-through;
 	color: rgba(0,0,0,0.5);
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.2);
 }
 
 img {
