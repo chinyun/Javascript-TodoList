@@ -1,6 +1,7 @@
 body {
 	margin: 0px;
 	padding-left: 5%;
+	padding-right: 5%;
 }
 
 .blog {
@@ -12,28 +13,13 @@ body {
 	font-weight: 600;
 }
 
-.container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: left;
-}
-
-.link {
-	font-size: 0.8em;
-	color: black;
-	text-decoration: underline;
-}
-
-.link:visited {
-	color: black;
-}
-
 input {
 	padding: 0.5em 1em;
 	border-radius: 2px;
 	border: 1.2px solid rgba(45,43,66,0.3) ;
 	font-size: 16px;
 	outline: none;
+	width: 65%;
 }
 
 button {
@@ -47,12 +33,12 @@ button {
 }
 
 #enter {
-    margin: 30px 10px 10px 10px;
+    margin: 0.5em 0 0 0.2em;
     padding: 0.3em 1em;
-    display: inline-block;
-    background-color: #4CAF50;
+    background-color: rgba(97,118,250,1);
 	color:  #FFFFFF;
-    border: 2px solid #4CAF50;
+    border: 2px solid rgba(97,118,250,1);
+    border-radius: 5px;
     text-align: center;
     font-size: 16px;
     text-decoration: none;
@@ -66,30 +52,35 @@ button {
 .column {
 	width: 100%;
 	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 .list {
-    font-size: 23px;
-    font-weight: 450;
     background-color: rgba(48,117,99,0.06);
     border-radius: 2px;
-	margin: 8px 30px 8px 0px ;
-	padding: 10px 0px 10px 20px;
+	margin: 10px 0;
+	padding: 0.5em;
+	display: flex;
+	justify-content: space-between;
 	color: rgba(97,118,250,1);
-	height: 45px;
 }
 
 .list:hover {
 	background-color: rgba(0,0,0,0.1);
 }
 
-.btn {
-	margin: 10px 20px 10px 30px;
-    padding: 0.3em 1em;
-    display: float;
-    float: right;
+.list span {
+	font-size: 20px;
+    font-weight: 450;
+    text-transform: capitalize;
+    margin-right: 15%;
+}
+
+.deleteBtn {
+	margin-right: 0.5em;
+    padding: 0.5em 1em;
+    display: inline-block;
 	background-color: #f44336;
     color: #fff;
     border-radius: 5px;
@@ -100,15 +91,14 @@ button {
     opacity: 0.9;
 }
 
-.btn:hover {
+.deleteBtn:hover {
 	opacity: 1;
 }
 
-.btn2 {
-	margin: 10px 20px 10px 30px;
-    padding: 0.3em 1em;
-    display: float;
-    float: right;
+.doneBtn {
+	margin-right: 0.5em;
+    padding: 0.5em 1em;
+    display: inline-block;
 	background-color: #4CAF50;
 	color:  #FFF;
     border-radius: 5px;
@@ -119,7 +109,7 @@ button {
     opacity: 0.9;
 }
 
-.btn2:hover {
+.doneBtn:hover {
 	opacity: 1;
 }
 
@@ -128,12 +118,22 @@ button {
 	background-color: rgba(0,0,0,0.2);
 }
 
-img {
-	width: 420px;
-	height: 280px;
-	margin-bottom: 20px;
+@media (max-width: 900px) {
+	.list {
+		flex-direction: column;
+	} 
+
+	.list span {
+		font-size: 22px;
+	}
+	.btnGroup {
+		margin-top: 0.8em;
+	}
 }
 
-img:hover {
-	transform: scale(1.05);
+@media (max-width: 374px) {
+	input {
+		margin-right: 5%;
+		width: 100%;
+	}
 }

@@ -1,38 +1,45 @@
-var button1 = document.getElementById("enter");
-var input = document.getElementById("userinput");
-var ul = document.querySelector("ul");
+let enterButton = document.getElementById("enter");
+let input = document.getElementById("userinput");
+let ul = document.querySelector("ul");
 
 function inputLength() {
 	return input.value.length;
 }
 
 function removeParent() {
-	event.target.parentNode.remove();
+	event.target.parentNode.parentNode.remove();
 }
 
 function beDone() {
-	event.target.parentNode.classList.toggle("done");
+	event.target.parentNode.parentNode.classList.toggle("done");
 	event.target.classList.toggle("done");
 }
 
 function createListElement() {
-	var li = document.createElement("li");
+	let li = document.createElement("li");
 	li.classList.toggle("list")
-	li.appendChild(document.createTextNode(input.value));
+	let text = document.createElement("span");
+	text.appendChild(document.createTextNode(input.value));
+	li.appendChild(text);
 	ul.appendChild(li);
 	input.value = "";
 
-	var btn = document.createElement("button");
-	btn.classList.toggle("btn");
-	btn.appendChild(document.createTextNode("delete"));
-	li.appendChild(btn);
-	btn.onclick = removeParent;
+	let btnGroup = document.createElement("div");
+	btnGroup.classList.toggle("btnGroup");
+	li.appendChild(btnGroup);
 
-	var btn2 = document.createElement("button");
-	btn2.classList.toggle("btn2");
-	btn2.appendChild(document.createTextNode("done"));
-	li.appendChild(btn2);
-	btn2.onclick = beDone;
+	let doneBtn = document.createElement("button");
+	doneBtn.classList.toggle("doneBtn");
+	doneBtn.appendChild(document.createTextNode("Done"));
+	btnGroup.appendChild(doneBtn);
+	
+	doneBtn.onclick = beDone;
+
+	let deleteBtn = document.createElement("button");
+	deleteBtn.classList.toggle("deleteBtn");
+	deleteBtn.appendChild(document.createTextNode("Delete"));
+	btnGroup.appendChild(deleteBtn);
+	deleteBtn.onclick = removeParent;
 }
 
 function addListAfterClick() {
@@ -47,7 +54,7 @@ function addListAfterKeypress() {
 	}
 }
 
-button1.addEventListener("mouseleave", addListAfterClick);
+enterButton.addEventListener("mouseleave", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
