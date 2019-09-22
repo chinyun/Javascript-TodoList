@@ -17,7 +17,7 @@ function beDone() {
 
 function createListElement() {
 	let li = document.createElement("li");
-	li.classList.toggle("list")
+	li.classList.toggle("list");
 	let text = document.createElement("span");
 	text.appendChild(document.createTextNode(input.value));
 	li.appendChild(text);
@@ -55,6 +55,4 @@ function addListAfterKeypress() {
 }
 
 enterButton.addEventListener("mouseleave", addListAfterClick);
-
 input.addEventListener("keypress", addListAfterKeypress);
-
